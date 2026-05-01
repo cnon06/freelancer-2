@@ -1,0 +1,64 @@
+@use "variables";
+
+#contact {
+  &-a {
+    .form-fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "name email" "subject phone" "message message" "button button";
+      gap: 1rem;
+      margin-bottom: 1rem;
+      //   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+      .name {
+        grid-area: name;
+      }
+      .email {
+        grid-area: email;
+      }
+      .subject {
+        grid-area: subject;
+      }
+      .phone {
+        grid-area: phone;
+      }
+      .message {
+        grid-area: message;
+        height: 180px;
+      }
+      .btn-dark {
+        color: #fff;
+        grid-area: button;
+      }
+      .input {
+        // padding: 0.5rem 1rem;
+
+        width: 100%;
+        padding: 0.9rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.001);
+
+        &:focus {
+          outline: none;
+          border-color: variables.$primary-color;
+          box-shadow: 0 0 0 2px rgba(231, 102, 102, 0.2);
+        }
+      }
+    }
+
+    .btn-dark {
+      border-radius: 0.5rem;
+    }
+  }
+  &-b {
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      text-align: center;
+      color: #fff;
+    }
+  }
+}
